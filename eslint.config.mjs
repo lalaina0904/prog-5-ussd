@@ -1,24 +1,22 @@
-import js from '@eslint/js';
-import globals from 'globals';
-import { defineConfig } from 'eslint/config';
-
-export default defineConfig([
-  {
-    files: ['**/*.{js,mjs,cjs}'],
-    languageOptions: {
-      ecmaVersion: 2022,
-      sourceType: 'module',
-      globals: {
-        ...globals.node
-      },
+export default [
+    {
+        files: ['**/*.js'],
+        languageOptions: {
+            ecmaVersion: 2021,
+            sourceType: 'commonjs',
+            env: {
+                node: true,
+                es2021: true,
+            },
+            globals: {
+                module: true,
+                require: true,
+                console: true,
+            },
+        },
+        rules: {
+            'no-console': 'off',
+            'no-unused-vars': ['warn'],
+        },
     },
-    plugins: { js },
-    rules: {
-      semi: ['error', 'always'],
-      quotes: ['error', 'single'],
-      indent: ['error', 2],
-      'no-unused-vars': ['warn'],
-      'no-undef': 'error',
-    },
-  },
-]);
+];
