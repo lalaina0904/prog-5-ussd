@@ -4,10 +4,6 @@ export default [
         languageOptions: {
             ecmaVersion: 2021,
             sourceType: 'commonjs',
-            env: {
-                node: true,
-                es2021: true,
-            },
             globals: {
                 module: true,
                 require: true,
